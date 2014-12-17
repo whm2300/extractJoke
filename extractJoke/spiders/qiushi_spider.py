@@ -61,6 +61,7 @@ class Qiushi(scrapy.Spider):
     name = "qiushi"
     allowed_domains = ["qiushibaike.com"]
     start_urls = make_start_urls()
+    download_delay = 1
 
     def __init__(self):
         self._db = SaveToMongo()
@@ -102,8 +103,6 @@ class Qiushi(scrapy.Spider):
         self._db.save_data(page_content)
 
     def make_requests_from_url(self, url):
-        time.sleep(1) #快速提取时，会产生较多的302。限制提取速度可以提高成功率。
-
         #模拟浏览器请求
         headers = {
                 'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'
