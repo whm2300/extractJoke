@@ -3,15 +3,15 @@
 
 import pymongo
 
-db_info = {"ip":"localhost", "port":27017, "db_name":"qiushi_data", "collection":"first_get"}
+db_info = {"ip":"localhost", "port":27017, "db_name":"qiushi_data", "collection":"joke_data"}
 
 class SaveToMongo(object):
     def __init__(self):
         self._db_conn = None
         self._db = None
-        self.open_db()
+        self.__open_db()
 
-    def open_db(self):
+    def __open_db(self):
         self._db_conn = pymongo.MongoClient(db_info['ip'], db_info['port'])
         self._db = self._db_conn[db_info['db_name']]
 

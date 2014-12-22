@@ -7,9 +7,7 @@ import time
 import scrapy
 from scrapy.http.request import Request
 
-from extractJoke.save_to_mongo import SaveToMongo
-
-#from extractJoke.items import QiuShiItem
+from extractJoke.items import QiuShiItem
 
 #热门
 hot_base_url = 'http://www.qiushibaike.com/8hr/page/%d'
@@ -44,12 +42,12 @@ name_type = {'8hr':1, 'hot':2, 'week':3, 'month':4, 'imgrank':5, 'pic':6, 'late'
 def make_start_urls():
     urls = []
     add_urls(urls, hot_base_url, hot_max_page)
-    add_urls(urls, day_base_url, day_max_page)
-    add_urls(urls, week_base_url, week_max_page)
-    add_urls(urls, month_base_url, month_max_page)
-    add_urls(urls, fact_base_url, fact_max_page)
-    add_urls(urls, season_base_url, season_max_page)
-    add_urls(urls, late_base_url, late_max_page)
+#    add_urls(urls, day_base_url, day_max_page)
+#    add_urls(urls, week_base_url, week_max_page)
+#    add_urls(urls, month_base_url, month_max_page)
+#    add_urls(urls, fact_base_url, fact_max_page)
+#    add_urls(urls, season_base_url, season_max_page)
+#    add_urls(urls, late_base_url, late_max_page)
 
     return urls
 
@@ -64,8 +62,7 @@ class Qiushi(scrapy.Spider):
     download_delay = 1
 
     def __init__(self):
-        self._db = SaveToMongo()
-        self._db.clear_data()
+        pass
 
     def parse(self, response):
         if response.status != 200:
@@ -86,7 +83,7 @@ class Qiushi(scrapy.Spider):
         page_content = []
         for m in patter.finditer(response.body):
             s = m.group()
-            data = {}
+            data = QiuShiItem()
             if s.find('class="content"') != -1: #内容数据
                 match = content_patter.search(s)
                 if match:
@@ -100,7 +97,7 @@ class Qiushi(scrapy.Spider):
                 match = picurl_patter.search(s)
                 if match: #将图片数据保存到上一个内容
                     page_content[-1]["pic_url"] = match.group().rstrip('" alt')
-        self._db.save_data(page_content)
+        return page_content
 
     def make_requests_from_url(self, url):
         #模拟浏览器请求

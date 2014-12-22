@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BOT_NAME	extractJoke/settings.py	/^BOT_NAME = 'extractJoke'$/;"	v
+ExtractjokeItem	extractJoke/items.py	/^class ExtractjokeItem(scrapy.Item):$/;"	c	inherits:scrapy.Item
+ExtractjokePipeline	extractJoke/pipelines.py	/^class ExtractjokePipeline(object):$/;"	c	inherits:object
+ITEM_PIPELINES	extractJoke/settings.py	/^ITEM_PIPELINES = {$/;"	v
+NEWSPIDER_MODULE	extractJoke/settings.py	/^NEWSPIDER_MODULE = 'extractJoke.spiders'$/;"	v
+QiuShiItem	extractJoke/items.py	/^class QiuShiItem(scrapy.Item):$/;"	c	inherits:scrapy.Item
+QiuShiItem	extractJoke/spiders/qiushi_spider.py	/^from extractJoke.items import QiuShiItem$/;"	i
+Qiushi	extractJoke/spiders/qiushi_spider.py	/^class Qiushi(scrapy.Spider):$/;"	c	inherits:scrapy.Spider
+Request	extractJoke/spiders/qiushi_spider.py	/^from scrapy.http.request import Request$/;"	i
+SPIDER_MODULES	extractJoke/settings.py	/^SPIDER_MODULES = ['extractJoke.spiders']$/;"	v
+SaveToMongo	extractJoke/save_to_mongo.py	/^class SaveToMongo(object):$/;"	c	inherits:object
+SaveToMongo	extractJoke/spiders/qiushi_spider.py	/^from extractJoke.save_to_mongo import SaveToMongo$/;"	i
+SecondJokePipeline	extractJoke/pipelines.py	/^class SecondJokePipeline(object):$/;"	c	inherits:object
+__init__	extractJoke/save_to_mongo.py	/^    def __init__(self):$/;"	m	class:SaveToMongo	access:public
+__init__	extractJoke/spiders/qiushi_spider.py	/^    def __init__(self):$/;"	m	class:Qiushi	access:public
+add_urls	extractJoke/spiders/qiushi_spider.py	/^def add_urls(urls, base_url, max_page):$/;"	f	access:public
+allowed_domains	extractJoke/spiders/qiushi_spider.py	/^    allowed_domains = ["qiushibaike.com"]$/;"	v	class:Qiushi
+clear_data	extractJoke/save_to_mongo.py	/^    def clear_data(self):$/;"	m	class:SaveToMongo	access:public
+close_spider	extractJoke/pipelines.py	/^    def close_spider(self, spider):$/;"	m	class:ExtractjokePipeline	access:public
+close_spider	extractJoke/pipelines.py	/^    def close_spider(self, spider):$/;"	m	class:SecondJokePipeline	access:public
+closed	extractJoke/spiders/qiushi_spider.py	/^    def closed(self, reason):$/;"	m	class:Qiushi	access:public
+content	extractJoke/items.py	/^    content = scrapy.Field()$/;"	v	class:QiuShiItem
+data	a.py	/^data = range(1, 5000000)$/;"	v
+day_base_url	extractJoke/spiders/qiushi_spider.py	/^day_base_url = 'http:\/\/www.qiushibaike.com\/hot\/page\/%d'$/;"	v
+day_max_page	extractJoke/spiders/qiushi_spider.py	/^day_max_page = 150$/;"	v
+db_info	extractJoke/save_to_mongo.py	/^db_info = {"ip":"localhost", "port":27017, "db_name":"qiushi_data", "collection":"joke_data"}$/;"	v
+download_delay	extractJoke/spiders/qiushi_spider.py	/^    download_delay = 1$/;"	v	class:Qiushi
+fact_base_url	extractJoke/spiders/qiushi_spider.py	/^fact_base_url = 'http:\/\/www.qiushibaike.com\/imgrank\/page\/%d'$/;"	v
+fact_max_page	extractJoke/spiders/qiushi_spider.py	/^fact_max_page = 25$/;"	v
+gc	a.py	/^import gc$/;"	i
+hot_base_url	extractJoke/spiders/qiushi_spider.py	/^hot_base_url = 'http:\/\/www.qiushibaike.com\/8hr\/page\/%d'$/;"	v
+hot_max_page	extractJoke/spiders/qiushi_spider.py	/^hot_max_page = 35 #热门最大页码$/;"	v
+late_base_url	extractJoke/spiders/qiushi_spider.py	/^late_base_url = 'http:\/\/www.qiushibaike.com\/late\/page\/%d'$/;"	v
+late_max_page	extractJoke/spiders/qiushi_spider.py	/^late_max_page = 2000$/;"	v
+make_requests_from_url	extractJoke/spiders/qiushi_spider.py	/^    def make_requests_from_url(self, url):$/;"	m	class:Qiushi	access:public
+make_start_urls	extractJoke/spiders/qiushi_spider.py	/^def make_start_urls():$/;"	f	access:public
+month_base_url	extractJoke/spiders/qiushi_spider.py	/^month_base_url = 'http:\/\/www.qiushibaike.com\/month\/page\/%d'$/;"	v
+month_max_page	extractJoke/spiders/qiushi_spider.py	/^month_max_page = 1000$/;"	v
+name	extractJoke/spiders/qiushi_spider.py	/^    name = "qiushi"$/;"	v	class:Qiushi
+name_type	extractJoke/spiders/qiushi_spider.py	/^name_type = {'8hr':1, 'hot':2, 'week':3, 'month':4, 'imgrank':5, 'pic':6, 'late':7}$/;"	v
+open_db	extractJoke/save_to_mongo.py	/^    def open_db(self):$/;"	m	class:SaveToMongo	access:public
+open_spider	extractJoke/pipelines.py	/^    def open_spider(self, spider):$/;"	m	class:ExtractjokePipeline	access:public
+open_spider	extractJoke/pipelines.py	/^    def open_spider(self, spider):$/;"	m	class:SecondJokePipeline	access:public
+parse	extractJoke/spiders/qiushi_spider.py	/^    def parse(self, response):$/;"	m	class:Qiushi	access:public
+pic_url	extractJoke/items.py	/^    pic_url = scrapy.Field()$/;"	v	class:QiuShiItem
+process_item	extractJoke/pipelines.py	/^    def process_item(self, item, spider):$/;"	m	class:ExtractjokePipeline	access:public
+process_item	extractJoke/pipelines.py	/^    def process_item(self, item, spider):$/;"	m	class:SecondJokePipeline	access:public
+pymongo	extractJoke/save_to_mongo.py	/^import pymongo$/;"	i
+rank_number	extractJoke/items.py	/^    rank_number = scrapy.Field()$/;"	v	class:QiuShiItem
+re	extractJoke/spiders/qiushi_spider.py	/^import re$/;"	i
+save_data	extractJoke/save_to_mongo.py	/^    def save_data(self, data):$/;"	m	class:SaveToMongo	access:public
+scrapy	extractJoke/items.py	/^import scrapy$/;"	i
+scrapy	extractJoke/spiders/qiushi_spider.py	/^import scrapy$/;"	i
+season_base_url	extractJoke/spiders/qiushi_spider.py	/^season_base_url = 'http:\/\/www.qiushibaike.com\/pic\/page\/%d'$/;"	v
+season_max_page	extractJoke/spiders/qiushi_spider.py	/^season_max_page = 350$/;"	v
+start_urls	extractJoke/spiders/qiushi_spider.py	/^    start_urls = make_start_urls()$/;"	v	class:Qiushi
+time	extractJoke/spiders/qiushi_spider.py	/^import time$/;"	i
+wdict	a.py	/^wdict = dict(zip(data, data))$/;"	v
+week_base_url	extractJoke/spiders/qiushi_spider.py	/^week_base_url = 'http:\/\/www.qiushibaike.com\/week\/page\/%d'$/;"	v
+week_max_page	extractJoke/spiders/qiushi_spider.py	/^week_max_page = 280$/;"	v

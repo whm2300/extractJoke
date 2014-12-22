@@ -16,4 +16,5 @@ class ExtractjokeItem(scrapy.Item):
 class QiuShiItem(scrapy.Item):
     content = scrapy.Field()
     pic_url = scrapy.Field()
-    rank_number = scrapy.Field()
+    type = scrapy.Field()
+    index = scrapy.Field()

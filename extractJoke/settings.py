@@ -15,3 +15,7 @@ NEWSPIDER_MODULE = 'extractJoke.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'extractJoke (+http://www.yourdomain.com)'
+
+ITEM_PIPELINES = {
+        'extractJoke.pipelines.SaveJokePipeline':300,
+        }
